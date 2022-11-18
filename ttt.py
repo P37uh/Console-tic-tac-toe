@@ -80,7 +80,7 @@ class Game():
             except ValueError:
                 print('X and Y must be integers')
             except OccupationError:
-                print('This cell is occupied')
+                print('This square is occupied')
             except KeyboardInterrupt:
                 system('cls')
                 return self.open_menu()
@@ -102,12 +102,11 @@ class Game():
 
     def get_help(self):
         print('''
-    When game starts, field 3x3 will appear.
-    At player's turn, player should enter (x, y) coordinates to place 'X' or 'O' in cell in (x, y), where
-    X - row number;
-    Y - column number.
-    Player wins, when any row, column or diagonal is fulfilled by his specific symbol (X or O).
-    Note: all commands are not case sensitive.
+    The game is played on a grid that's 3 squares by 3 squares.
+    You are X, your friend is O. Players take turns putting their marks in empty squares.
+    Putting mark in a square is done by entering the X and Y coordinates of that square.
+    The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
+    When all 9 squares are full, the game is over.
               ''')
         return self._cmd_input()
 
